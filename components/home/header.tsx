@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "../wrapper";
+import { FaGithub } from "react-icons/fa6";
 
 export function Header() {
   return (
@@ -7,7 +8,9 @@ export function Header() {
       <Container>
         <div className="flex justify-between items-center h-full">
           <Logo />
-          <div>public api</div>
+          <a href="https://github.com/mkhotamirais/tamipublicapi" title="source code">
+            <FaGithub className="size-5" />
+          </a>
         </div>
       </Container>
     </header>

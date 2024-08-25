@@ -1,5 +1,10 @@
 export const menu = [
-  { href: "/omdbapi", title: "Omdbapi", description: `deskripsi omdbapi`, tools: ["nextjs"] },
+  {
+    href: "/omdbapi",
+    title: "Omdbapi",
+    description: `deskripsi omdbapi loremaslkdfjha asdjf kasjdfh lkadsjfh akldfj aksjdf aksdfj akdfj aslkdf hajd `,
+    tools: ["nextjs"],
+  },
   { href: "/jikananime", title: "Jikananime", description: `deskripsi jikananime`, tools: ["nextjs"] },
   { href: "/tmdb", title: "Tmdb", description: `deskripsi tmdb`, tools: ["nextjs"] },
   { href: "/dummyjson", title: "Dummyjson", description: `deskripsi dummyjson`, tools: ["nextjs"] },

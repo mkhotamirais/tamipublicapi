@@ -51,7 +51,7 @@ export function Projects({ className }: { className?: string }) {
       <div className="pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1">
         {filteredMenu.map((item, i) => (
           <Card key={i} className="group relative flex flex-col overflow-hidden text-center">
-            <div className="translate-y-full group-hover:translate-y-0 transition absolute inset-0 top-3/4 z-10 flex items-center justify-center">
+            <div className="z-10 py-2 translate-y-full group-hover:translate-y-0 transition absolute bottom-0 flex items-center justify-center inset-x-0">
               <Button asChild className="rounded-full px-8 backdrop-blur bg-black/15">
                 <Link href={item.href}>View</Link>
               </Button>

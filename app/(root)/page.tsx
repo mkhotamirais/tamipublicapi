@@ -13,7 +13,7 @@ export default function HomePage() {
       <main className="py-8">
         <Container>
           <div className="text-center py-6">
-            <h1 className="text-2xl sm:text-3xl">
+            <h1 className="text-2xl sm:text-3xl mb-3">
               WELCOME{" "}
               <b>
                 <i></i>
