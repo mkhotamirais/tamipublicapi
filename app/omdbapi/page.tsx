@@ -11,11 +11,13 @@ export default function OmdbapiPage({ searchParams }: { searchParams: Record<str
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2">
-        <div className="py-3 grid grid-cols-3 gap-1">
-          <OmdbType />
-          <OmdbY />
-          <OmdbPlot />
-        </div>
+        <Suspense fallback="Loading..">
+          <div className="py-3 grid grid-cols-3 gap-1">
+            <OmdbType />
+            <OmdbY />
+            <OmdbPlot />
+          </div>
+        </Suspense>
       </div>
       <Suspense key={`${s}-${type}-${y}-${plot}`} fallback={<Loader />}>
         <OmdbList par={searchParams} />
