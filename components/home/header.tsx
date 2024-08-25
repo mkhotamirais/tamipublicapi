@@ -6,14 +6,19 @@ export function Header() {
     <header className="z-50 h-16 border-b sticky top-0 backdrop-blur bg-white/15">
       <Container>
         <div className="flex justify-between items-center h-full">
-          <Link href="/">
-            <span>TAMI</span>
-            <span className="font-bold">PUBLICAPI</span>
-          </Link>
-          <div>nav</div>
+          <Logo />
           <div>public api</div>
         </div>
       </Container>
     </header>
+  );
+}
+
+export function Logo() {
+  return (
+    <Link href="/">
+      <span>TAMI</span>
+      <span className="font-bold">PUBLICAPI</span>
+    </Link>
   );
 }

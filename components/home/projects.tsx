@@ -29,8 +29,7 @@ export function Projects({ className }: { className?: string }) {
   };
 
   return (
-    <div id="projects" className={`${className} scroll-mt-16`}>
-      <h2 className="text-3xl font-bold text-center mb-4">CRUD VERSIONS</h2>
+    <div id="projects" className={`${className}`}>
       <Input
         value={cari}
         onChange={(e) => setCari(e.target.value)}
