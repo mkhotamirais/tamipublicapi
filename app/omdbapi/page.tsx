@@ -1,8 +1,5 @@
-"use client";
-
 import { Suspense } from "react";
 import Loader from "@/components/loader";
-
 import OmdbList from "./(components)/omdb-list";
 import { OmdbType, OmdbY, OmdbPlot } from "./(components)/omdb-query";
 

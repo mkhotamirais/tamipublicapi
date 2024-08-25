@@ -1,5 +1,3 @@
-"use client";
-
 import { Container } from "@/components/wrapper";
 import { Globe } from "lucide-react";
 import Link from "next/link";

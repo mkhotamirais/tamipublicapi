@@ -37,12 +37,12 @@ export default function OmdbDetail({ imdbID }: { imdbID: string }) {
       </div>
       <DialogContent
         style={{ background: `linear-gradient(to top, rgba(0,0,0,.9), rgba(0,0,0,.1)), url(${data?.Poster})` }}
-        className="max-h-screen max-w-3xl bg-cover bg-no-repeat"
+        className="max-h-screen max-w-3xl bg-cover bg-no-repeat border-none"
       >
         <DialogHeader>
           <DialogTitle className="mb-4 bg-black/60 text-white p-3 w-fit rounded-xl">{data?.Title}</DialogTitle>
           <DialogDescription asChild>
-            <div className="overflow-y-scroll text-white h-[calc(100vh-10rem)] grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="overflow-y-scroll bg-black/15 p-3 rounded-lg text-white h-[calc(100vh-14rem)] grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Image
                 src={data?.Poster ?? "https://placehold.co/600x400"}
                 width={600}
@@ -50,7 +50,7 @@ export default function OmdbDetail({ imdbID }: { imdbID: string }) {
                 alt="omdbapi image"
                 className="rounded-xl"
               />
-              <div className="bg-black/60 p-4 rounded-xl space-y-2">
+              <div className="space-y-2">
                 <div>
                   <b>Title: </b>
                   {data?.Title}
