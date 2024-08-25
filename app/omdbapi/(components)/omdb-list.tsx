@@ -21,7 +21,7 @@ export default async function OmdbList({ par }: { par: Record<string, string> })
   let newPar = !par.s ? { ...par, s: "naruto" } : par;
   const params = new URLSearchParams(newPar).toString();
 
-  // await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   const response = await fetch(`${omdbUrl}&${params}`);
   const data = await response.json();
 

@@ -4,12 +4,15 @@ import Image from "next/image";
 import React from "react";
 import OmdbDetail from "./omdb-detail";
 import { OmdbType } from "./omdb-list";
+import { motion } from "framer-motion";
 
 export default function OmdbListClient({ item }: { item: OmdbType }) {
   return (
-    <div
+    <motion.div
       style={{ background: `linear-gradient(to top, rgba(0,0,0,.9), rgba(0,0,0,.5)), url(${item?.Poster})` }}
       className="relative group border rounded overflow-hidden"
+      initial={{ scale: 0.7 }}
+      animate={{ scale: 1 }}
     >
       <div className="z-10 -top-full opacity-0 group-hover:top-0 group-hover:opacity-100 absolute h-12 text-sm bg-gradient-to-b from-black to-[rgba(255,255,255,0)] w-full text-white flex justify-between p-2 transition-all duration-150">
         <div>{item?.Year}</div>
@@ -26,6 +29,6 @@ export default function OmdbListClient({ item }: { item: OmdbType }) {
       <h2 className="text-white text-center p-2 min-h-20 flex items-center justify-center bg-gradient-to-t from-[rgba(0,0,0,.5)] to-[rgba(255,255,255,.1)]">
         {item.Title}
       </h2>
-    </div>
+    </motion.div>
   );
 }
