@@ -20,7 +20,6 @@ export const OmdbSearch = () => {
 
   return (
     <Input
-      className=""
       defaultValue={searchParams?.get("s") as string}
       placeholder="Search movie.."
       onChange={(e) => onChange(e.target.value)}
@@ -76,7 +75,7 @@ export const OmdbY = () => {
   const tahun = [];
   const tahunIni = new Date().getFullYear();
   for (let i = tahunIni; i >= 1990; i--) {
-    tahun.push(i);
+    tahun.push(i.toString());
   }
   return (
     <Select onValueChange={onChange}>
@@ -85,8 +84,8 @@ export const OmdbY = () => {
       </SelectTrigger>
       <SelectContent>
         <SelectItem value="none">Year</SelectItem>
-        {tahun.map((item) => (
-          <SelectItem key={item} value={item}>
+        {tahun.map((item, i) => (
+          <SelectItem key={i} value={item}>
             {item}
           </SelectItem>
         ))}

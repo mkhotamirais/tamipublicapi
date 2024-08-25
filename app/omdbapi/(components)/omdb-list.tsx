@@ -26,7 +26,7 @@ export default async function OmdbList({ par }: { par: Record<string, string> })
   const data = await response.json();
 
   return (
-    <>
+    <div>
       {par.s && (
         <div>
           Result for{" "}
@@ -44,6 +44,6 @@ export default async function OmdbList({ par }: { par: Record<string, string> })
       ) : (
         <div className="italic text-xl text-center mt-12">Not found</div>
       )}
-    </>
+    </div>
   );
 }
