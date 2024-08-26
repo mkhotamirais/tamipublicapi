@@ -3,14 +3,14 @@
 import Image from "next/image";
 import React from "react";
 import OmdbDetail from "./omdb-detail";
-import { OmdbType } from "./omdb-list";
 import { motion } from "framer-motion";
+import { OmdbType } from "../constants";
 
 export default function OmdbListClient({ item }: { item: OmdbType }) {
   return (
     <motion.div
       style={{ background: `linear-gradient(to top, rgba(0,0,0,.9), rgba(0,0,0,.5)), url(${item?.Poster})` }}
-      className="relative group border rounded overflow-hidden"
+      className="relative group rounded overflow-hidden"
       initial={{ scale: 0.7 }}
       animate={{ scale: 1 }}
     >

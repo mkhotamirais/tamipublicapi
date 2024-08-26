@@ -23,6 +23,7 @@ export const OmdbSearch = () => {
       defaultValue={searchParams?.get("s") as string}
       placeholder="Search movie.."
       onChange={(e) => onChange(e.target.value)}
+      className="bg-slate-500 border-none placeholder:text-white"
     />
   );
 };
@@ -44,7 +45,7 @@ export const OmdbType = () => {
 
   return (
     <Select onValueChange={onChange}>
-      <SelectTrigger>
+      <SelectTrigger className="bg-slate-500 border-none">
         <SelectValue placeholder="Type" />
       </SelectTrigger>
       <SelectContent>
@@ -79,7 +80,7 @@ export const OmdbY = () => {
   }
   return (
     <Select onValueChange={onChange}>
-      <SelectTrigger>
+      <SelectTrigger className="bg-slate-500 border-none">
         <SelectValue placeholder="Year" />
       </SelectTrigger>
       <SelectContent>
@@ -111,7 +112,7 @@ export const OmdbPlot = () => {
 
   return (
     <Select onValueChange={onChange}>
-      <SelectTrigger>
+      <SelectTrigger className="bg-slate-500 border-none">
         <SelectValue placeholder="Plot" />
       </SelectTrigger>
       <SelectContent>

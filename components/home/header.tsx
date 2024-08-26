@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container } from "../wrapper";
-import { FaGithub } from "react-icons/fa6";
+import { FaEnvelope, FaGithub, FaLinkedin, FaUser } from "react-icons/fa6";
 
 export function Header() {
   return (
@@ -8,9 +8,7 @@ export function Header() {
       <Container>
         <div className="flex justify-between items-center h-full">
           <Logo />
-          <a href="https://github.com/mkhotamirais/tamipublicapi" title="source code">
-            <FaGithub className="size-5" />
-          </a>
+          <Socials />
         </div>
       </Container>
     </header>
@@ -25,3 +23,22 @@ export function Logo() {
     </Link>
   );
 }
+
+export const Socials = () => {
+  return (
+    <div className="flex gap-4 sm:gap-5 items-center justify-center">
+      <a title="My Portfolio" href="https://tamiporto.vercel.app">
+        <FaUser className="size-5" />
+      </a>
+      <a title="Github account" href="https://github.com/mkhotamirais">
+        <FaGithub className="size-5" />
+      </a>
+      <a title="Linked account" href="https://www.linkedin.com/in/mkhotami-rais">
+        <FaLinkedin className="size-5" />
+      </a>
+      <a title="Send email" href="mailto:tami01.job@gmail.com">
+        <FaEnvelope className="size-5" />
+      </a>
+    </div>
+  );
+};

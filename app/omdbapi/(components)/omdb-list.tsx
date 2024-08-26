@@ -1,28 +1,12 @@
-import { omdbUrl } from "@/lib/constants";
+import { OmdbType, url } from "../constants";
 import OmdbListClient from "./omdb-list-client";
-
-export type OmdbType = {
-  Title: string;
-  Poster: string;
-  imdbID: string;
-  Actors: string;
-  Year: string;
-  Country: string;
-  Genre: string;
-  Released: string;
-  Runtime: string;
-  Type: string;
-  imdbRating: string;
-  Writer: string;
-  Plot: string;
-};
 
 export default async function OmdbList({ par }: { par: Record<string, string> }) {
   let newPar = !par.s ? { ...par, s: "naruto" } : par;
   const params = new URLSearchParams(newPar).toString();
 
   await new Promise((resolve) => setTimeout(resolve, 1000));
-  const response = await fetch(`${omdbUrl}&${params}`);
+  const response = await fetch(`${url}&${params}`);
   const data = await response.json();
 
   return (

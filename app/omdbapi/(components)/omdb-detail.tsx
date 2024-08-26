@@ -10,16 +10,15 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { omdbUrl } from "@/lib/constants";
 import { useEffect, useState } from "react";
-import { OmdbType } from "./omdb-list";
 import Image from "next/image";
+import { OmdbType, url } from "../constants";
 
 export default function OmdbDetail({ imdbID }: { imdbID: string }) {
   const [data, setData] = useState<OmdbType | null>(null);
   useEffect(() => {
     const getData = async () => {
-      const response = await fetch(`${omdbUrl}&i=${imdbID}`);
+      const response = await fetch(`${url}&i=${imdbID}`);
       const data = await response.json();
       setData(data);
     };
