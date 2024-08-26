@@ -41,7 +41,7 @@ export function Projects({ className }: { className?: string }) {
           <Badge
             variant={selectedBadge.includes(item) ? "secondary" : "default"}
             key={i}
-            className="cursor-pointer"
+            className="cursor-pointer font-light"
             onClick={onBadge}
           >
             {item}
@@ -64,7 +64,7 @@ export function Projects({ className }: { className?: string }) {
             </CardContent>
             <CardFooter className="p-2 flex gap-1 flex-wrap justify-center">
               {item.tools.map((itm) => (
-                <Badge variant="default" key={itm}>
+                <Badge key={itm} className="font-light">
                   {itm}
                 </Badge>
               ))}

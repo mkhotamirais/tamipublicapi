@@ -21,7 +21,7 @@ export default function HomePage() {
               TO TAMI<b>PUBLICAPI</b>
             </h1>
             <p className="text-muted-foreground">
-              website ini berisi beberapa publci api yang ditampilkan dalam bentuk grid system dan tabel
+              This website features various public APIs displayed in a grid layout and table format.
             </p>
           </div>
           <Projects />
