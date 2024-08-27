@@ -24,6 +24,12 @@ export const menu = [
     tools: ["nextjs", "tailwind", "shadcn", "zustand", "sonner", "typescript", "TMDB"],
   },
   {
+    href: "/mediastack",
+    title: "Mediastack",
+    description: `This project retrieves news data from the Mediastack and displays it in a grid layout. Each movie's details are dynamically rendered. The project includes features such as filtering, searching, and sorting.`,
+    tools: ["nextjs", "tailwind", "shadcn", "zustand", "sonner", "typescript", "Mediastack"],
+  },
+  {
     href: "/jsonplaceholder",
     title: "Jsonplaceholder",
     description: `This project retrieves article data from the Jsonplaceholder and displays it in a grid layout. Each movie's details are dynamically rendered. The project includes features such as filtering, searching, and sorting.`,

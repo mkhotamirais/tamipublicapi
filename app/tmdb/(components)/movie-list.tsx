@@ -2,16 +2,7 @@ import Image from "next/image";
 import { imagePrefix, tmdbApiKey, TmdbMovie, url } from "../constants";
 
 export async function MovieList() {
-  // https://api.themoviedb.org/3/movie/157336?api_key=42efea6e97551441f95f83358126d7a8
-
-  const response = await fetch(`${url}/movie/top_rated?api_key=${tmdbApiKey}`);
-  //   const res = await fetch(
-  //     `https://api.themoviedb.org/3${genre === "fetchTopRated" ? "/movie/top_rated" : "/trending/all/week"}?api_key=${
-  //       process.env.TMDB_API_KEY
-  //     }&language=en-US&page=1`,
-  //     { next: { revalidate: 50 } }
-  //   );
-
+  const response = await fetch(`${url}/movie/top_rated?api_key=${tmdbApiKey}&language=en-US&page=1`);
   const data = await response.json();
 
   if (!response.ok) {
