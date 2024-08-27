@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function JpPage() {
   return (
-    <main className="grow h-full">
+    <main className="grow h-[calc(100vh-4rem)]">
       <Container>
         <div className="flex flex-col space-y-8 items-center justify-center py-12 h-full">
           <div>

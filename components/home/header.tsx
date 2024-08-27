@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container } from "../wrapper";
-import { FaEnvelope, FaGithub, FaLinkedin, FaUser } from "react-icons/fa6";
+import { FaEnvelope, FaGithub, FaGlobe, FaHouse, FaLinkedin, FaUser } from "react-icons/fa6";
 
 export function Header() {
   return (
@@ -21,6 +21,19 @@ export function Logo() {
       <span>TAMI</span>
       <span className="font-bold">PUBLICAPI</span>
     </Link>
+  );
+}
+
+export function NavRight({ source }: { source: string }) {
+  return (
+    <div className="flex gap-4">
+      <a title="dummyjson homepage" href={source}>
+        <FaGlobe className="size-5" />
+      </a>
+      <Link href="/">
+        <FaHouse className="size-5" />
+      </Link>
+    </div>
   );
 }
 

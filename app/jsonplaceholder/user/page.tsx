@@ -1,4 +1,4 @@
-import { JpType, url } from "../constants";
+import { JpUserType, url } from "../constants";
 
 export default async function JpUserPage() {
   const response = await fetch(`${url}/users`);
@@ -7,9 +7,12 @@ export default async function JpUserPage() {
   return (
     <div>
       <div>Users</div>
-      <div>
-        {data.map((item: JpType) => (
-          <div key={item.id}>{item.name}</div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+        {data.map((item: JpUserType) => (
+          <div key={item.id} className="border rounded p-2">
+            <div>{item.name}</div>
+            <div>{item.address.city}</div>
+          </div>
         ))}
       </div>
     </div>

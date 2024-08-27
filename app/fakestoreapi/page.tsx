@@ -1,3 +1,3 @@
-export default function FakestoreapiPage() {
+export default function FksPage() {
   return <div>FakestoreapiPage</div>;
 }

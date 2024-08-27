@@ -1,6 +1,6 @@
 export const url = `https://jsonplaceholder.typicode.com`;
 
-export type JpType = {
+export type JpUserType = {
   id: string;
   name: string;
   username: string;
@@ -17,4 +17,18 @@ export type JpType = {
     catchPhrase: string;
     bs: string;
   };
+};
+
+export type JpPostType = {
+  userId: string;
+  id: string;
+  title: string;
+  body: string;
+};
+
+export type JpTodoType = {
+  userId: string;
+  id: string;
+  title: string;
+  completed: boolean;
 };

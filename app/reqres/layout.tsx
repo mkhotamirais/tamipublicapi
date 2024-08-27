@@ -3,14 +3,14 @@ import { Container } from "@/components/wrapper";
 import Link from "next/link";
 import React from "react";
 
-export default function DummyjsonLayout({ children }: { children: React.ReactNode }) {
+export default function ReqresLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="">
         <Container>
           <div className="h-16 flex items-center justify-between border-b">
-            <Link href="/dummyjson">Dummyjson</Link>
-            <NavRight source="https://dummyjson.com/" />
+            <Link href="/reqres">Reqres</Link>
+            <NavRight source="https://reqres.in/" />
           </div>
         </Container>
       </header>

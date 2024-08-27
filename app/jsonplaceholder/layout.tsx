@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { FaBars, FaGithub, FaXmark } from "react-icons/fa6";
 import { useJp } from "./useJp";
 import { Globe } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { NavRight } from "@/components/home/header";
 
 const navMenu = [
   { href: "/jsonplaceholder/user", label: "User" },
@@ -26,20 +28,12 @@ export default function JpLayout({ children }: { children: React.ReactNode }) {
           <div className="h-16 flex items-center justify-between border-b gap-8">
             <Logo />
             <NavContent />
-            <div className="flex gap-4 items-center">
-              <a title="jsonplaceholder homepage" href="https://jsonplaceholder.typicode.com/">
-                <Globe className="size-5" />
-              </a>
-              <a title="github account" href="https://github.com/mkhotamirais">
-                <FaGithub className="size-5" />
-              </a>
-              <NavBtn />
-            </div>
+            <NavRight source="https://jsonplaceholder.typicode.com/" />
           </div>
         </Container>
       </header>
-      <main onClick={onClick} className="h-[calc(100vh-4rem)]">
-        {children}
+      <main onClick={onClick}>
+        <Container>{children}</Container>
       </main>
     </div>
   );
@@ -71,6 +65,8 @@ const NavBtn = () => {
 
 const NavContent = () => {
   const { nav } = useJp();
+  const pathname = usePathname();
+  const path2 = pathname.split("/")[2];
   return (
     <nav
       className={`${
@@ -78,7 +74,13 @@ const NavContent = () => {
       } origin-top transition sm:scale-100 w-full clear-none flex flex-col sm:flex-row text-sm fixed gap-0 sm:gap-6 left-0 right-0 p-3 sm:p-0 sm:static top-16 bg-white sm:bg-inherit border-b sm:border-none`}
     >
       {navMenu.map((item, i) => (
-        <Link key={i} href={item.href} className="py-3 sm:py-0 hover:text-primary text-muted-foreground">
+        <Link
+          key={i}
+          href={item.href}
+          className={`py-3 sm:py-0 hover:text-primary ${
+            path2 === item.href.split("/")[2] ? "font-semibold text-primary" : "text-muted-foreground"
+          }`}
+        >
           {item.label}
         </Link>
       ))}
