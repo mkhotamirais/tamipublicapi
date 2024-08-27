@@ -1,5 +1,11 @@
 export const url = `https://jsonplaceholder.typicode.com`;
 
+export const navMenu = [
+  { href: "/jsonplaceholder/user", label: "User" },
+  { href: "/jsonplaceholder/post", label: "Post" },
+  { href: "/jsonplaceholder/todo", label: "Todo" },
+];
+
 export type JpUserType = {
   id: string;
   name: string;

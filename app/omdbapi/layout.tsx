@@ -4,6 +4,12 @@ import React from "react";
 import { OmdbSearch } from "./(components)/omdb-query";
 import { Suspense } from "react";
 import { NavRight } from "@/components/home/header";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Omdbapi",
+  description: "Description omdbapi",
+};
 
 export default function OmdbLayout({ children }: { children: React.ReactNode }) {
   return (
