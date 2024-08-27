@@ -14,7 +14,9 @@ export default function ReqresLayout({ children }: { children: React.ReactNode }
           </div>
         </Container>
       </header>
-      {children}
+      <main>
+        <Container>{children}</Container>
+      </main>
     </div>
   );
 }

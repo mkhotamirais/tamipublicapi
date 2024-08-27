@@ -14,7 +14,9 @@ export default function FksLayout({ children }: { children: React.ReactNode }) {
           </div>
         </Container>
       </header>
-      {children}
+      <main>
+        <Container>{children}</Container>
+      </main>
     </div>
   );
 }

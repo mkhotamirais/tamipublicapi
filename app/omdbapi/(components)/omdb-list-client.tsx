@@ -25,6 +25,7 @@ export default function OmdbListClient({ item }: { item: OmdbType }) {
         height={500}
         alt={item.Title || "omdb image"}
         className="group-hover:object-contain group-hover:scale-95 h-72 w-full object-cover object-center transition-all duration-150"
+        priority
       />
       <h2 className="text-white text-center p-2 min-h-20 flex items-center justify-center bg-gradient-to-t from-[rgba(0,0,0,.5)] to-[rgba(255,255,255,.1)]">
         {item.Title}
