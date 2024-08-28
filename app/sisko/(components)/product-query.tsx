@@ -52,9 +52,9 @@ export function QuerySort() {
   };
 
   return (
-    <Select defaultValue={searchParams?.get("sorting") as string} onValueChange={onChange}>
+    <Select defaultValue={searchParams.get("sorting") ?? ""} onValueChange={onChange}>
       <SelectTrigger>
-        <SelectValue className="text-red-500" placeholder="hasdlf" />
+        <SelectValue className="text-red-500" placeholder="Sorting" />
       </SelectTrigger>
       <SelectContent align="end">
         <SelectItem value="none">Sort</SelectItem>
@@ -81,7 +81,7 @@ export function QueryType() {
     replace(`${pathname}?${params.toString()}`);
   };
   return (
-    <Select defaultValue={searchParams?.get("type") as string} onValueChange={onChange}>
+    <Select defaultValue={searchParams.get("sorting") ?? ""} onValueChange={onChange}>
       <SelectTrigger>
         <SelectValue placeholder="Type" />
       </SelectTrigger>

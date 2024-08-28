@@ -44,7 +44,7 @@ export const OmdbType = () => {
   }, 300);
 
   return (
-    <Select onValueChange={onChange}>
+    <Select defaultValue={searchParams.get("type") ?? ""} onValueChange={onChange}>
       <SelectTrigger className="bg-slate-500 border-none">
         <SelectValue placeholder="Type" />
       </SelectTrigger>
