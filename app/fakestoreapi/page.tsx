@@ -2,8 +2,7 @@ import { ProductList } from "./(components)/product-list";
 
 export default function FksPage() {
   return (
-    <div>
-      FakestoreapiPage
+    <div className="py-4">
       <ProductList />
     </div>
   );

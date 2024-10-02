@@ -14,7 +14,7 @@ export async function AnimeList() {
             width={500}
             height={500}
             alt="jikan image"
-            className="h-48 object-contain object-center"
+            className="h-48 object-cover object-center"
           />
           <div className="p-2">{item.title}</div>
         </div>

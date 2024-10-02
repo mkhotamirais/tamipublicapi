@@ -15,9 +15,9 @@ export async function ProductList() {
             height={500}
             alt="image fakstore api"
             priority
-            className="h-48 aspect-square object-center object-contain"
+            className="h-48 aspect-square object-center object-cover"
           />
-          <div>{item.title}</div>
+          <div className="text-center text-primary py-2">{item.title}</div>
         </div>
       ))}
     </div>

@@ -1,5 +1,4 @@
 import { NavRight } from "@/components/home/header";
-import { Container } from "@/components/wrapper";
 import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
@@ -12,17 +11,17 @@ export const metadata: Metadata = {
 export default function ReqresLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="">
-        <Container>
-          <div className="h-16 flex items-center justify-between border-b">
-            <Link href="/reqres">Reqres</Link>
-            <NavRight source="https://reqres.in/" />
+      <header className="sticky top-0 z-50 bg-background border-b">
+        <div className="container">
+          <div className="h-16 flex items-center justify-between">
+            <Link href="/reqres" className="text-lg font-semibold">
+              REQ<span className="text-primary">RES</span>
+            </Link>
+            <NavRight href="https://reqres.in/" title="reqres homepage" />
           </div>
-        </Container>
+        </div>
       </header>
-      <main>
-        <Container>{children}</Container>
-      </main>
+      <main className="grow container">{children} </main>
     </div>
   );
 }

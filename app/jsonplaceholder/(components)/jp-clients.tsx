@@ -1,6 +1,5 @@
 "use client";
 
-import { Container } from "@/components/wrapper";
 import React from "react";
 import { useJp } from "../useJp";
 import Link from "next/link";
@@ -15,17 +14,9 @@ export const JpLanding = ({ children }: { children: React.ReactNode }) => {
     if (nav) closeNav();
   };
   return (
-    <main onClick={onClick}>
-      <Container>{children}</Container>
+    <main onClick={onClick} className="grow container">
+      {children}
     </main>
-  );
-};
-
-export const Logo = () => {
-  return (
-    <Link href="/jsonplaceholder" className="text-lg">
-      Json<b>Placeholder</b>
-    </Link>
   );
 };
 

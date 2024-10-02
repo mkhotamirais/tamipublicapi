@@ -1,57 +1,42 @@
 import Link from "next/link";
-import { Container } from "../wrapper";
-import { FaEnvelope, FaGithub, FaGlobe, FaHouse, FaLinkedin, FaUser } from "react-icons/fa6";
+import { FaGlobe, FaHouse } from "react-icons/fa6";
+import { ModeToggle } from "../theme/mode-toggle";
 
 export function Header() {
   return (
-    <header className="z-50 h-16 border-b sticky top-0 backdrop-blur bg-white/15">
-      <Container>
-        <div className="flex justify-between items-center h-full">
+    <header className="z-50 border-b sticky top-0 backdrop-blur">
+      <div className="container">
+        <div className="flex justify-between items-center h-16">
           <Logo />
-          <Socials />
+          <div>
+            <ModeToggle />
+          </div>
         </div>
-      </Container>
+      </div>
     </header>
   );
 }
 
 export function Logo() {
   return (
-    <Link href="/">
-      <span>TAMI</span>
-      <span className="font-bold">PUBLICAPI</span>
+    <Link href="/" className="text-lg font-semibold">
+      TAMI<span className="text-primary">PUBLICAPI</span>
     </Link>
   );
 }
 
-export function NavRight({ source }: { source: string }) {
+export function NavRight({ href, title }: { href: string; title: string }) {
   return (
-    <div className="flex gap-4">
-      <a title="dummyjson homepage" href={source}>
-        <FaGlobe className="size-5" />
-      </a>
-      <Link href="/">
-        <FaHouse className="size-5" />
+    <div className="flex items-center gap-4">
+      <Link title={title} href={href}>
+        <FaGlobe className="size-5" color="hsl(var(--primary))" />
       </Link>
+      <Link href="/" title="Homepage">
+        <FaHouse className="size-5" color="hsl(var(--primary))" />
+      </Link>
+      <div>
+        <ModeToggle />
+      </div>
     </div>
   );
 }
-
-export const Socials = () => {
-  return (
-    <div className="flex gap-4 sm:gap-5 items-center justify-center">
-      <a title="My Portfolio" href="https://tamiporto.vercel.app">
-        <FaUser className="size-5" />
-      </a>
-      <a title="Github account" href="https://github.com/mkhotamirais">
-        <FaGithub className="size-5" />
-      </a>
-      <a title="Linked account" href="https://www.linkedin.com/in/mkhotami-rais">
-        <FaLinkedin className="size-5" />
-      </a>
-      <a title="Send email" href="mailto:tami01.job@gmail.com">
-        <FaEnvelope className="size-5" />
-      </a>
-    </div>
-  );
-};

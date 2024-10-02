@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { ProductList } from "./(components)/product-list";
 import Loader from "@/components/loader";
-import { QuerySort, QueryType } from "./(components)/product-query";
+import { QuerySearch, QuerySort, QueryType } from "./(components)/product-query";
 
 export default function SiskoPage({
   searchParams,
@@ -15,6 +15,7 @@ export default function SiskoPage({
       <div className="grid grid-cols-1 sm:grid-cols-2 py-3">
         <Suspense>
           <div className="grid grid-cols-2 gap-2">
+            <QuerySearch />
             <QuerySort />
             {/* <QueryType /> */}
           </div>

@@ -6,7 +6,7 @@ import { QueryCountry, QueryHead } from "./(components)/news-query";
 export default function NewsapiPage({ searchParams }: { searchParams: { q: string } }) {
   const { q } = searchParams;
   return (
-    <div>
+    <div className="py-4">
       <div className="py-2 grid gap-2 grid-cols-2">
         <QueryHead />
         <QueryCountry />

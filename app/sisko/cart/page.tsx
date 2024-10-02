@@ -46,10 +46,7 @@ export default function CartPage() {
         {cartItems
           .sort((a, b) => a.createdAt.localeCompare(b.createdAt))
           .map((item) => (
-            <div
-              key={item.id}
-              className="grid grid-cols-3 gap-2 items-center my-2 py-1 odd:bg-gray-50 justify-items-center"
-            >
+            <div key={item.id} className="grid grid-cols-3 gap-2 items-center my-2 py-1 justify-items-center">
               <Link
                 href={`/sisko/product/${item.id}`}
                 className="relative group rounded-lg overflow-hidden size-20 flex justify-center"
@@ -79,7 +76,7 @@ export default function CartPage() {
             </div>
           ))}
       </div>
-      <div className="mt-8 w-full bg-gray-100 p-2 flex justify-between items-center rounded-xl">
+      <div className="mt-8 w-full p-2 flex justify-between items-center rounded-xl">
         <div className="text-lg">
           Total: <b>Rp{totalPrice.toLocaleString("id-ID")}</b>
         </div>

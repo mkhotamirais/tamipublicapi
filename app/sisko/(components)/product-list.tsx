@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { ProductType, url } from "../constants";
-import { FaCartPlus, FaExclamation } from "react-icons/fa6";
-import { Button } from "@/components/ui/button";
 import ProductDetail from "./product-detail";
 import { ProductCartBtnList } from "./product-cart-button";
 

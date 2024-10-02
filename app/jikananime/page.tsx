@@ -2,8 +2,7 @@ import { AnimeList } from "./(components)/anime-list";
 
 export default function JikananimePage() {
   return (
-    <div>
-      JikananimePage
+    <div className="py-4">
       <AnimeList />
     </div>
   );

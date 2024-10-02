@@ -1,22 +1,16 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { menu } from "@/lib/menu";
 import Link from "next/link";
 import { MouseEvent, useState } from "react";
 
-const badges = Array.from(new Set(menu.flatMap((project) => project.tools)));
-
 export function Projects({ className }: { className?: string }) {
   const [cari, setCari] = useState("");
   const [selectedBadge, setSelectedBadge] = useState<string[]>([]);
 
-  const filteredMenu = menu
-    .filter((item) => item.title.toLowerCase().includes(cari.toLowerCase()))
-    .filter((item) => selectedBadge.every((badge) => item.tools.includes(badge)));
+  const filteredMenu = menu.filter((item) => item.title.toLowerCase().includes(cari.toLowerCase()));
 
   const onBadge = (e: MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLDivElement;
@@ -36,40 +30,17 @@ export function Projects({ className }: { className?: string }) {
         placeholder="Search project.."
         className="bg-cyan-100/15 mb-2"
       />
-      <div className="flex gap-1 flex-wrap my-4 justify-center">
-        {badges.sort().map((item, i) => (
-          <Badge
-            variant={selectedBadge.includes(item) ? "secondary" : "default"}
-            key={i}
-            className="cursor-pointer font-light"
-            onClick={onBadge}
-          >
-            {item}
-          </Badge>
-        ))}
-      </div>
       <div className="pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1">
         {filteredMenu.map((item, i) => (
-          <Card key={i} className="group relative flex flex-col overflow-hidden text-center">
+          <div key={i} className="group relative flex flex-col overflow-hidden text-center">
             <div className="z-10 py-2 translate-y-full group-hover:translate-y-0 transition absolute bottom-0 flex items-center justify-center inset-x-0">
               <Button asChild className="rounded-full px-8 backdrop-blur bg-black/15">
                 <Link href={item.href}>View</Link>
               </Button>
             </div>
-            <CardHeader className="p-2">
-              <CardTitle>{item.title}</CardTitle>
-            </CardHeader>
-            <CardContent className="px-2 grow">
-              <CardDescription>{item.description}</CardDescription>
-            </CardContent>
-            <CardFooter className="p-2 flex gap-1 flex-wrap justify-center">
-              {item.tools.map((itm) => (
-                <Badge key={itm} className="font-light">
-                  {itm}
-                </Badge>
-              ))}
-            </CardFooter>
-          </Card>
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
+          </div>
         ))}
       </div>
       {filteredMenu.length === 0 && (

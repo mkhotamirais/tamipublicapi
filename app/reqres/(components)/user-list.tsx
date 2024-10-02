@@ -4,6 +4,7 @@ import { ReqresUserType, url } from "../constants";
 export async function UserList() {
   const response = await fetch(`${url}`);
   const data = await response.json();
+
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
       {data.data.map((item: ReqresUserType) => (
